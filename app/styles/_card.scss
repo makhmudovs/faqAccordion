@@ -1,0 +1,244 @@
+@import "mixins";
+.card {
+  width: 350px;
+  min-height: 500px;
+  margin: 50px auto auto auto;
+  padding: 7rem 1.4375rem 1.4375rem 1.4375rem;
+  background-color: #fff;
+  position: relative;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.29);
+  border-radius: 30px;
+  position: relative;
+
+  background-image: url("/images/bg-pattern-mobile.svg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 65%;
+
+  .img-overlay {
+    position: absolute;
+    left: -60px;
+    background-image: url("/images/illustration-box-desktop.svg");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 47%;
+    width: 366px;
+    height: 366px;
+    background-position: -22% 108%;
+  }
+  @include breakpoint-down(small) {
+    .img-overlay {
+      background-image: none;
+      display: none;
+      height: none;
+      width: none;
+    }
+  }
+  @include breakpoint-down(medium) {
+    .img-overlay {
+      background-image: none;
+      display: none;
+      height: none;
+      width: none;
+    }
+  }
+  @include breakpoint-down(xsmall) {
+    width: 90%;
+  }
+
+  @include breakpoint-up(large) {
+    width: 920px;
+    padding: 1.4375rem;
+    min-height: 600px;
+    background-image: url("/images/bg-pattern-desktop.svg"),
+      url("/images/illustration-woman-online-desktop.svg");
+    background-position: -466% 68%, -19% 49%;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 90%, 52%;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 266px;
+    height: 196px;
+    top: -100px;
+    // z-index: 99;
+    margin: 0 auto;
+    left: -20px;
+    right: 0;
+    background-image: url("/images/illustration-woman-online-mobile.svg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include breakpoint-up(large) {
+      background-image: none;
+      // background-position: left, left;
+      // background-repeat: no-repeat;
+      // background-size: 50%, 50%;
+      // width: 366px;
+      // height: 296px;
+      // bottom: 25%;
+      // z-index: 99;
+      // margin: 0 auto;
+      // left: 0;
+    }
+  }
+
+  .acc-wrapper-parent {
+    h1 {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    @include breakpoint-up(large) {
+      padding: 5px;
+      margin-top: 30px;
+      margin-right: 60px;
+      width: 350px;
+      // min-height: 100%;
+      float: right;
+
+      h1 {
+        margin-top: 40px;
+        // padding-top: 20px;
+      }
+    }
+  }
+
+  .acc-wrapper-parent:not(h1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+
+    @include breakpoint-up(large) {
+      // justify-content: space-evenly;
+      flex: none;
+      gap: none;
+    }
+  }
+
+  .acc-wrapper {
+    border-bottom: 0.5px solid $lightGrayishBlue;
+    padding: 7px 0;
+    // margin-bottom: 15px;
+
+    .accordion {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      margin-bottom: 5px;
+      text-decoration: none;
+
+      @include breakpoint-up(large) {
+        margin-bottom: 2px;
+      }
+    }
+  }
+
+  // &__acc-wrapper {
+  //   &:not(h1) {
+  //     display: flex;
+  //     flex-direction: column;
+  //     justify-content: space-around;
+  //   }
+  // }
+  // @include breakpoint-up(large) {
+  //   width: 920px;
+
+  //   &__acc-wrapper {
+  //     width: 350px;
+  //     float: right;
+  //   }
+
+  //   &::after {
+  //     content: "";
+  //     height: 196px;
+  //     width: 266px;
+  //     position: absolute;
+  //     top: -22%;
+  //     left: 50%;
+  //     transform: translateX(-50%);
+  //     background-image: url("../../images/illustration-box-desktop.svg");
+  //     background-repeat: no-repeat;
+  //     background-position: center top, 100% 100%;
+  //   }
+  // }
+
+  // &::before {
+  //   content: "";
+  //   height: 196px;
+  //   width: 266px;
+  //   position: absolute;
+  //   top: -22%;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   background-image: url("../../images/illustration-woman-online-mobile.svg"),
+  //     url("../../images/bg-pattern-mobile.svg");
+  //   background-repeat: no-repeat;
+  //   background-position: center top, 100% 100%;
+
+  //   @include breakpoint-up(large) {
+  //     height: 100%;
+  //     width: 550px;
+  //     // left: 0;
+  //     top: 0;
+  //     left: 0;
+  //     bottom: 0;
+  //     transform: translateX(0);
+  //     background-image: url("../../images/bg-pattern-desktop.svg"),
+  //       url("../../images/illustration-woman-online-desktop.svg");
+  //     background-repeat: no-repeat;
+  //     background-position: center bottom, 145% 50%;
+  //     background-size: contain, cover;
+  //   }
+  // }
+
+  // h1 {
+  //   text-align: center;
+  //   margin-top: 70px;
+  //   margin-bottom: 35px;
+  // }
+
+  // .acc-wrapper {
+  //   border-bottom: 0.5px solid $lightGrayishBlue;
+  //   padding-bottom: 20px;
+  // }
+
+  // .acc-wrapper {
+  //   padding: 10px 0;
+  //   border-bottom: 0.5px solid lightgray;
+  // }
+
+  // .accordion {
+  //   display: block;
+  //   text-decoration: none;
+  //   padding-bottom: 17px;
+  //   color: $veryDarkGrayishBlue;
+  //   display: flex;
+  //   flex-direction: row;
+  //   justify-content: space-between;
+  //   transition: all ease-in-out 300ms;
+  //   font-size: 0.8125;
+
+  //   &:hover {
+  //     color: $softRed;
+  //   }
+  // }
+
+  // .panel {
+  //   transition: all ease-in-out 300ms;
+  //   font-size: 0.8125;
+  //   padding-bottom: 20px;
+  // }
+
+  .hide {
+    display: none;
+  }
+
+  .show {
+    display: block;
+  }
+}

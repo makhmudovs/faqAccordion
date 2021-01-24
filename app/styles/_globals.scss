@@ -1,0 +1,40 @@
+@import "variables";
+@import "mixins";
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 110vh;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  background: linear-gradient($softViolet, $softBlue);
+  background-repeat: no-repeat;
+  padding: 5rem 1rem 1rem 1rem;
+
+  @include breakpoint-up(large) {
+    height: 110vh;
+  }
+}
+
+.p-1 {
+  padding: 10px;
+}
+
+.py-1-5 {
+  padding: 5px 0;
+}
